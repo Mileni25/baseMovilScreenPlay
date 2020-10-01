@@ -1,0 +1,14 @@
+/target/
+/.metadata/
+/.scannerwork/
+/*.apk
+/*.ipa
+/.idea/
+.project
+/.settings/
+*.iml
+.classpath
+/build/
+/gradle/
+/history/
+/.gradle/
