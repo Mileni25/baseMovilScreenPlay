@@ -1,12 +1,19 @@
-#author: Adrian Pulido
-#language: es
+#Author: AdrianP
 
-  @Login
-  Característica: Ingreso a la app Eribank
-  Como usuario quiero autenticarme en la app para verificar mis credenciales
+@Login
+Feature: Prubas sobre modulo login
+  Como Cliente de SwangLabs
+  Quiero ingresar a la tienda online
+  Para/Con el objetivo de comprar algún articulo
 
   @LoginExitoso
-  Escenario: Login Exitoso
-    Dado que Adrian ingresa a la app Eribank
-    Cuando inicia sesion con el usuario "company" y la clave "company"
-    Entonces podria ver el mensaje "Your balance is:"
+  Scenario Outline: Realizar Login Exitoso en SwangLabs
+    Given Andrea esta en la tienda SwagLabs
+    When realiza el login
+      |user|pass|
+      |<user>|<pass>|
+    Then vera el mensaje <mensaje>
+
+    Examples:
+      |user|pass|mensaje|
+      |standard_user|secret_sauce|Products|

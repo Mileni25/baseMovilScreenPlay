@@ -6,5 +6,7 @@ import net.serenitybdd.screenplay.actors.OnlineCast;
 
 public class Hooks {
     @Before
-    public void setup(){OnStage.setTheStage(new OnlineCast());}
+    public void setup(){
+        OnStage.setTheStage(new OnlineCast());
+    }
 }
