@@ -15,6 +15,9 @@ buildscript {
     }
 }
 
+group 'com.choucair.moviles.app'
+version '1.0'
+
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
