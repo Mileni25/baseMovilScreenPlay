@@ -15,12 +15,12 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("net.serenity-bdd:serenity-gradle-plugin:2.1.4")
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.3.10")
     }
 }
 ext {
-    serenityVersion = '2.0.89'
-    serenityCucumberVersion = '1.9.48'
+    serenityVersion = '2.1.5'
+    serenityCucumberVersion = '1.9.50'
     appiumVersion = '7.3.0'
 }
 
@@ -33,8 +33,9 @@ dependencies {
     implementation "net.serenity-bdd:serenity-core:$rootProject.ext.serenityVersion"
     implementation "net.serenity-bdd:serenity-junit:$rootProject.ext.serenityVersion"
     implementation "net.serenity-bdd:serenity-screenplay:$rootProject.ext.serenityVersion"
+    implementation "net.serenity-bdd:serenity-screenplay-webdriver:$rootProject.ext.serenityVersion"
     implementation "net.serenity-bdd:serenity-cucumber:$rootProject.ext.serenityCucumberVersion"
-    implementation 'io.appium:java-client:$rootProject.ext.appiumVersion'
+    implementation "io.appium:java-client:$rootProject.ext.appiumVersion"
 }
 
 test {
