@@ -1,30 +1,34 @@
 package com.choucair.moviles.app.stepsdefinitios;
 
+import java.util.List;
+import com.choucair.moviles.app.exceptions.errors.LoginErrors;
 import com.choucair.moviles.app.models.LoginModel;
 import com.choucair.moviles.app.questions.MensajeProductos;
-import com.choucair.moviles.app.tasks.HacerLogin;
-import com.choucair.moviles.app.tasks.AbrirLaWeb;
+import com.choucair.moviles.app.tasks.HaceLogin;
+import com.choucair.moviles.app.tasks.AbreLaApp;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import net.serenitybdd.screenplay.GivenWhenThen;
-import net.serenitybdd.screenplay.actors.OnStage;
-
-import java.util.List;
+import static org.hamcrest.Matchers.equalTo;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class LoginDefinitions {
-    @Given("^(.*) esta en la tienda SwagLabs$")
-    public void estaEnLaTiendaSwagLabs(String nombre) {
-        OnStage.theActorCalled(nombre).wasAbleTo(AbrirLaWeb.swagLabs());
+    @Given("^(.*) abre la app SwagLabs$")
+    public void abreLaAppSwagLabs(String nombre) {
+        theActorCalled(nombre).wasAbleTo(AbreLaApp.swagLabs());
     }
 
-    @When("^realiza el login$")
-    public void realizaElLogin(List<LoginModel> credenciales) {
-        OnStage.theActorInTheSpotlight().attemptsTo(HacerLogin.exitosoConCredenciales(credenciales.get(0)));
+    @When("^realiza el login con credenciales$")
+    public void realizaElLoginConCredenciales(List<LoginModel> credenciales) {
+        theActorInTheSpotlight().attemptsTo(HaceLogin.exitosoConCredenciales(credenciales.get(0)));
     }
 
     @Then("^vera el mensaje (.*)$")
     public void veraElMensajeSuccess(String mensaje) {
-        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(MensajeProductos.productos(mensaje)));
+        theActorInTheSpotlight().should(
+                seeThat(MensajeProductos.text(), equalTo(mensaje))
+                        .orComplainWith(LoginErrors.class, LoginErrors.SinVerificarIngreso()));
     }
 }

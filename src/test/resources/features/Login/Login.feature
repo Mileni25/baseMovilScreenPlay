@@ -1,19 +1,19 @@
 #Author: AdrianP
 
 @Login
-Feature: Prubas sobre modulo login
+Feature: Pruebas sobre modulo login
   Como Cliente de SwangLabs
-  Quiero ingresar a la tienda online
+  Quiero ingresar a la tienda app
   Para/Con el objetivo de comprar algún articulo
 
   @LoginExitoso
   Scenario Outline: Realizar Login Exitoso en SwangLabs
-    Given Andrea esta en la tienda SwagLabs
-    When realiza el login
+    Given Andrea abre la app SwagLabs
+    When realiza el login con credenciales
       |user|pass|
       |<user>|<pass>|
     Then vera el mensaje <mensaje>
 
     Examples:
       |user|pass|mensaje|
-      |standard_user|secret_sauce|Products|
+      |standard_user|secret_sauce|PRODUCTOS|
