@@ -1,4 +1,4 @@
-package com.choucair.moviles.app.exceptions.errors;
+package com.choucair.moviles.app.errors;
 
 public class LoginErrors extends AssertionError{
     private static final String SIN_VERIFICAR_INGRESO = "No fue posible verificar el ingreso exitoso a la app";

@@ -1,7 +1,7 @@
 package com.choucair.moviles.app.stepsdefinitios;
 
 import java.util.List;
-import com.choucair.moviles.app.exceptions.errors.LoginErrors;
+import com.choucair.moviles.app.errors.LoginErrors;
 import com.choucair.moviles.app.models.LoginModel;
 import com.choucair.moviles.app.questions.MensajeProductos;
 import com.choucair.moviles.app.tasks.HaceLogin;
@@ -9,10 +9,10 @@ import com.choucair.moviles.app.tasks.AbreLaApp;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+
+import static net.serenitybdd.screenplay.actors.OnStage.*;
 import static org.hamcrest.Matchers.equalTo;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class LoginDefinitions {
     @Given("^(.*) abre la app SwagLabs$")

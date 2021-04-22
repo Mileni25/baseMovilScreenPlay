@@ -4,6 +4,8 @@ apply plugin: 'net.serenity-bdd.aggregator'
 
 group 'com.choucair.moviles.app'
 version '1.0'
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
 
 sourceCompatibility = 1.8
 
