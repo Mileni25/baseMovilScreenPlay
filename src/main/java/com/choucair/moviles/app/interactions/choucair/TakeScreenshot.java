@@ -1,4 +1,4 @@
-package com.choucair.moviles.app.interactions;
+package com.choucair.moviles.app.interactions.choucair;
 
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.screenplay.Actor;

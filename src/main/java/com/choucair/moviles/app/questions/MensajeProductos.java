@@ -1,7 +1,9 @@
 package com.choucair.moviles.app.questions;
 
 import static com.choucair.moviles.app.ui.UIHome.lblProducts;
-import com.choucair.moviles.app.interactions.TakeScreenshot;
+
+import com.choucair.moviles.app.interactions.choucair.TakeScreenshot;
+
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;

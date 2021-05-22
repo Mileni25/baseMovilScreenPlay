@@ -1,11 +1,12 @@
 package com.choucair.moviles.app.tasks;
 
-import com.choucair.moviles.app.interactions.TakeScreenshot;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.thucydides.core.annotations.Step;
 import java.util.logging.Logger;
+
+import com.choucair.moviles.app.interactions.choucair.TakeScreenshot;
 
 public class AbreLaApp implements Task {
 
