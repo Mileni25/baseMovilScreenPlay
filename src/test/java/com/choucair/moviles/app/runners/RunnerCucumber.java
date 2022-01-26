@@ -6,9 +6,9 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 import org.junit.runner.RunWith;
 
 @CucumberOptions(
-        features = {"src/test/resources/features/Login/Login.feature"}
+        features = {"src/test/resources/features"}
         ,tags = {"@LoginExitoso"}
-        ,glue = {"com.choucair.moviles.app.stepsdefinitios"}
+        ,glue = {"com.choucair.moviles.app.stepsdefinitions"}
         ,snippets = SnippetType.CAMELCASE
 )
 @RunWith(CucumberWithSerenity.class)
